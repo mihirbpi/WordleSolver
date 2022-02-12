@@ -133,9 +133,11 @@ while (not solved):
 
     if(len(all_words) == 1):
         num_guesses += 1
+        print("Calculating next guess...")
         guess = get_best_word(guess, all_words)
         solved = True
     else:
+        print("Calculating next guess...")
         guess = get_best_word(guess, all_words)
         num_guesses += 1
 
