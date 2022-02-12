@@ -22,6 +22,7 @@ def pattern_and_word_to_reg(word, pattern):
         counts = defaultdict(lambda:0)
 
         for i in range(0, 5):
+
             if(pattern[i] == "g"):
                 reg_list[i] = word[i]
                 gs.append(word[i])
@@ -33,22 +34,27 @@ def pattern_and_word_to_reg(word, pattern):
                 special.add(word[i])
 
         for i in range(0, 5):
+
             if(pattern[i] == "b" and (word[i] not in gs) and (word[i] not in ys)):
                 bs += word[i]
+
             elif(pattern[i] == "b"):
                 special.add(word[i])
 
         for i in range(0, 5):
+
             if(reg_list[i] == "_"):
+
                 if(len(bs) > 0):
                     reg_list[i] = "[^"+bs+"]"
                 else:
                     reg_list[i] = "."
 
         for i in range(0, 5):
+
             if(pattern[i] == "y"):
                 reg_list[i] = "[^"+reg_list[i][1:-1] + word[i] + "]"
-        #print("".join(reg_list), list(special), counts)
+
         return ("".join(reg_list), list(special), counts)
 
 
