@@ -116,13 +116,13 @@ solved = False
 num_guesses = 1
 
 while (not solved):
-    print("your next guess should be: " + guess)
-    pattern = input("enter the pattern you got after this guess: ")
+    print("The next guess should be: " + guess)
+    pattern = input("Enter the pattern displayed after this guess: ")
 
     if(pattern=="ggggg"):
         break
     all_words = get_matching_words(guess, pattern, all_words)
-    print("there are now "+str(len(all_words))+" words that match all your current patterns")
+    print("There are now "+str(len(all_words))+" words that match all the currently shown patterns")
     print(all_words)
 
     if(len(all_words) == 1):
@@ -133,4 +133,4 @@ while (not solved):
         guess = get_best_word(guess, all_words)
         num_guesses += 1
 
-print("You solved the puzzle in "+str(num_guesses)+ " guesses")
+print("Solved the puzzle in "+str(num_guesses)+ " guesses")
