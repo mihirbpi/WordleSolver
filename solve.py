@@ -127,6 +127,7 @@ while (not solved):
 
     if(pattern=="ggggg"):
         break
+
     all_words = get_matching_words(guess, pattern, all_words)
     print("There are now "+str(len(all_words))+" words that match all the currently shown patterns")
     print(all_words)
@@ -135,7 +136,7 @@ while (not solved):
         num_guesses += 1
         print("Calculating next guess...")
         guess = get_best_word(guess, all_words)
-        solved = True
+
     else:
         print("Calculating next guess...")
         guess = get_best_word(guess, all_words)
