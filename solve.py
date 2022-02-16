@@ -70,7 +70,7 @@ def get_matching_words(word, pattern, all_words_list):
 
         for l in reg_result[1]:
 
-            if(w.count(l) < reg_result[2][l]):
+            if(w.count(l) != reg_result[2][l]):
                 b = False
 
         if ((re.fullmatch(reg, w) != None) and b):
